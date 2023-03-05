@@ -1,5 +1,7 @@
 package net.anvian.perfume;
 
+import net.anvian.perfume.effects.ModStatusEffects;
+import net.anvian.perfume.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -11,6 +13,11 @@ public class PerfumeMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.debug("Hello from Perfume Mod!");
+
+		ModStatusEffects.registerEffects();
+
+		ModItems.registerModItems();
+
+		LOGGER.info("Hello from Perfume Mod!");
 	}
 }
