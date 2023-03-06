@@ -25,11 +25,6 @@ public class CarrotPerfume extends Item {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        ItemStack itemStack = user.getStackInHand(hand);
-
-        if (!world.isClient){
-            itemStack.damage(1, user, (entity) -> entity.sendToolBreakStatus(hand));
-        }
         return ItemUsage.consumeHeldItem(world, user, hand);
     }
     @Override
