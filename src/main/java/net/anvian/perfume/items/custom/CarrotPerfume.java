@@ -33,18 +33,16 @@ public class CarrotPerfume extends Item {
         super.finishUsing(stack, world, user);
         Hand hand = user.getActiveHand();
 
-        if (user instanceof PlayerEntity && !((PlayerEntity)user).getAbilities().creativeMode) {
+        if (user instanceof PlayerEntity playerEntity && !((PlayerEntity)user).getAbilities().creativeMode) {
             ItemStack itemStack = new ItemStack(Items.GLASS_BOTTLE);
-            PlayerEntity playerEntity = (PlayerEntity)user;
-            if (stack.getDamage() == 24){
+            if (stack.getDamage() == stack.getMaxDamage() -1){
                 if (!playerEntity.getInventory().insertStack(itemStack)) {
                     playerEntity.dropItem(itemStack, false);
                 }
             }
         }
 
-        if (user instanceof ServerPlayerEntity) {
-            ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity)user;
+        if (user instanceof ServerPlayerEntity serverPlayerEntity) {
             serverPlayerEntity.getItemCooldownManager().set(this, 5);
         }
 
