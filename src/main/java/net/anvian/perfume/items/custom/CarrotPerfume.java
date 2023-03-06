@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
 import net.minecraft.item.Items;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
@@ -30,21 +31,27 @@ public class CarrotPerfume extends Item {
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         super.finishUsing(stack, world, user);
-        if (stack.isEmpty()) {
-            return new ItemStack(Items.GLASS_BOTTLE);
-        }
+        Hand hand = user.getActiveHand();
+
         if (user instanceof PlayerEntity && !((PlayerEntity)user).getAbilities().creativeMode) {
             ItemStack itemStack = new ItemStack(Items.GLASS_BOTTLE);
             PlayerEntity playerEntity = (PlayerEntity)user;
-            if (itemStack.getDamage() <= 0){
+            if (stack.getDamage() == 1){
                 if (!playerEntity.getInventory().insertStack(itemStack)) {
                     playerEntity.dropItem(itemStack, false);
                 }
             }
-            user.addStatusEffect(new StatusEffectInstance(ModStatusEffects.CarrotEffect, 6000, 0));
-            stack.damage(1, user, (entity) -> entity.sendToolBreakStatus(Hand.OFF_HAND));
-            stack.damage(1, user, (entity) -> entity.sendToolBreakStatus(Hand.MAIN_HAND));
         }
+
+        if (user instanceof ServerPlayerEntity) {
+            ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity)user;
+            serverPlayerEntity.getItemCooldownManager().set(this, 5);
+        }
+
+        user.addStatusEffect(new StatusEffectInstance(ModStatusEffects.CarrotEffect, 6000, 0));
+
+        stack.damage(1, user, (entity) -> entity.sendToolBreakStatus(hand));
+
         return stack;
     }
 
