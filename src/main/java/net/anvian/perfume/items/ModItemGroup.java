@@ -9,6 +9,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItemGroup {
     public static final ItemGroup PERFUME_GROUP = FabricItemGroupBuilder.build(
-            new Identifier(PerfumeMod.MOD_ID, "perfume_group"), () -> new ItemStack(Items.GLASS_BOTTLE)
+            new Identifier(PerfumeMod.MOD_ID, "perfume_group"),
+            () -> new ItemStack(Items.GLASS_BOTTLE)
     );
 }
