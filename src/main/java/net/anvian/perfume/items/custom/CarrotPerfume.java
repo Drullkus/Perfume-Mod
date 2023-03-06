@@ -36,7 +36,7 @@ public class CarrotPerfume extends Item {
         if (user instanceof PlayerEntity && !((PlayerEntity)user).getAbilities().creativeMode) {
             ItemStack itemStack = new ItemStack(Items.GLASS_BOTTLE);
             PlayerEntity playerEntity = (PlayerEntity)user;
-            if (stack.getDamage() == 1){
+            if (stack.getDamage() == 24){
                 if (!playerEntity.getInventory().insertStack(itemStack)) {
                     playerEntity.dropItem(itemStack, false);
                 }
