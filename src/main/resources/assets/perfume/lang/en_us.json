@@ -2,5 +2,7 @@
   "itemGroup.perfume.perfume_group": "Perfume Mod",
 
   "item.perfume.carrot_perfume" : "Carrot Perfume",
-  "effect.perfume.carrot_effect": "Carrot Perfume"
+  "effect.perfume.carrot_effect": "Carrot Perfume",
+
+  "subtitles.perfume.perfume_sound": "Perfume sound"
 }

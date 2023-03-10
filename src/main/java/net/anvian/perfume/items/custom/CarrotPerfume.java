@@ -1,6 +1,7 @@
 package net.anvian.perfume.items.custom;
 
 import net.anvian.perfume.effects.ModStatusEffects;
+import net.anvian.perfume.sound.ModSounds;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,7 +11,6 @@ import net.minecraft.item.ItemUsage;
 import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
@@ -65,11 +65,11 @@ public class CarrotPerfume extends Item {
 
     @Override
     public SoundEvent getDrinkSound() {
-        return SoundEvents.ITEM_HONEY_BOTTLE_DRINK;
+        return ModSounds.PERFUME_SOUND;
     }
 
     @Override
     public SoundEvent getEatSound() {
-        return SoundEvents.ITEM_HONEY_BOTTLE_DRINK;
+        return ModSounds.PERFUME_SOUND;
     }
 }

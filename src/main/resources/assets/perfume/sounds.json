@@ -1,0 +1,8 @@
+{
+  "perfume_sound": {
+    "subtitle": "subtitles.perfume.perfume_sound",
+    "sounds" : [
+      "perfume:perfume_sound"
+    ]
+  }
+}
