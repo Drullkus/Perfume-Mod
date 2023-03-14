@@ -1,6 +1,8 @@
 {
   "itemGroup.perfume.perfume_group": "Perfume Mod",
 
+  "item.perfume.glass_perfume_bottle" : "Glass perfume bottle",
+
   "item.perfume.carrot_perfume" : "Carrot perfume",
   "effect.perfume.carrot_effect": "Carrot perfume",
 

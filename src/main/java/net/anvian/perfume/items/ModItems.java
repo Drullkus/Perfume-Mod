@@ -9,6 +9,12 @@ import net.minecraft.util.registry.Registry;
 
 public class ModItems {
 
+    public static final Item GLASS_PERFUME_BOTTLE = registerItem("glass_perfume_bottle", new Item(
+            new FabricItemSettings()
+                    .maxCount(64)
+                    .group(ModItemGroup.PERFUME_GROUP)
+    ));
+
     public static final Item CARROT_PERFUME = registerItem("carrot_perfume", new CarrotPerfume(
        new FabricItemSettings()
                .maxCount(1)
