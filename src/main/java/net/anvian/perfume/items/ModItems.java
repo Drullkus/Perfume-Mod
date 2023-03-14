@@ -2,6 +2,7 @@ package net.anvian.perfume.items;
 
 import net.anvian.perfume.PerfumeMod;
 import net.anvian.perfume.items.custom.CarrotPerfume;
+import net.anvian.perfume.items.custom.ModPerfumeBottle;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
@@ -9,7 +10,7 @@ import net.minecraft.util.registry.Registry;
 
 public class ModItems {
 
-    public static final Item GLASS_PERFUME_BOTTLE = registerItem("glass_perfume_bottle", new Item(
+    public static final Item GLASS_PERFUME_BOTTLE = registerItem("glass_perfume_bottle", new ModPerfumeBottle(
             new FabricItemSettings()
                     .maxCount(64)
                     .group(ModItemGroup.PERFUME_GROUP)

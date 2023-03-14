@@ -1,6 +1,7 @@
 package net.anvian.perfume.items.custom;
 
 import net.anvian.perfume.effects.ModStatusEffects;
+import net.anvian.perfume.items.ModItems;
 import net.anvian.perfume.sound.ModSounds;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -8,7 +9,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
-import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Hand;
@@ -34,7 +34,7 @@ public class CarrotPerfume extends Item {
         Hand hand = user.getActiveHand();
 
         if (user instanceof PlayerEntity playerEntity && !((PlayerEntity)user).getAbilities().creativeMode) {
-            ItemStack itemStack = new ItemStack(Items.GLASS_BOTTLE);
+            ItemStack itemStack = new ItemStack(ModItems.GLASS_PERFUME_BOTTLE);
             if (stack.getDamage() == stack.getMaxDamage() -1){
                 if (!playerEntity.getInventory().insertStack(itemStack)) {
                     playerEntity.dropItem(itemStack, false);
