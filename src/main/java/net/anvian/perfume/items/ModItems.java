@@ -3,6 +3,7 @@ package net.anvian.perfume.items;
 import net.anvian.perfume.PerfumeMod;
 import net.anvian.perfume.effects.ModStatusEffects;
 import net.anvian.perfume.items.custom.ModPerfumeBottle;
+import net.anvian.perfume.items.custom.ModPerfumeWaterBottle;
 import net.anvian.perfume.items.custom.PerfumeBottle;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
@@ -10,6 +11,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class ModItems {
+    private static final int setMaxDamage = 25;
 
     public static final Item GLASS_PERFUME_BOTTLE = registerItem("glass_perfume_bottle", new ModPerfumeBottle(
             new FabricItemSettings()
@@ -17,16 +19,17 @@ public class ModItems {
                     .group(ModItemGroup.PERFUME_GROUP)
     ));
 
-    public static final Item WATER_PERFUME_BOTTLE = registerItem("water_perfume_bottle", new Item(
+    public static final Item WATER_PERFUME_BOTTLE = registerItem("water_perfume_bottle", new ModPerfumeWaterBottle(
             new FabricItemSettings()
                     .maxCount(1)
+                    .maxDamage(setMaxDamage)
                     .group(ModItemGroup.PERFUME_GROUP)
     ));
 
     public static final Item CARROT_PERFUME = registerItem("carrot_perfume", new PerfumeBottle(
        new FabricItemSettings()
                .maxCount(1)
-               .maxDamage(25)
+               .maxDamage(setMaxDamage)
                .group(ModItemGroup.PERFUME_GROUP)
             , ModStatusEffects.CarrotEffect, 6000, 0
     ));
