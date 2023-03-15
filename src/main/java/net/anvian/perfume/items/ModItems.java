@@ -16,6 +16,12 @@ public class ModItems {
                     .group(ModItemGroup.PERFUME_GROUP)
     ));
 
+    public static final Item WATER_PERFUME_BOTTLE = registerItem("water_perfume_bottle", new Item(
+            new FabricItemSettings()
+                    .maxCount(1)
+                    .group(ModItemGroup.PERFUME_GROUP)
+    ));
+
     public static final Item CARROT_PERFUME = registerItem("carrot_perfume", new CarrotPerfume(
        new FabricItemSettings()
                .maxCount(1)

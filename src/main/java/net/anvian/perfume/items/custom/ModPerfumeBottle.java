@@ -1,9 +1,12 @@
 package net.anvian.perfume.items.custom;
 
+import net.anvian.perfume.items.ModItems;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
-import net.minecraft.potion.PotionUtil;
-import net.minecraft.potion.Potions;
+import net.minecraft.item.GlassBottleItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsage;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
@@ -36,8 +39,8 @@ public class ModPerfumeBottle extends Item {
             }
             if (world.getFluidState(blockPos).isIn(FluidTags.WATER)) {
                 world.playSound(user, user.getX(), user.getY(), user.getZ(), SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0f, 1.0f);
-                world.emitGameEvent(user, GameEvent.FLUID_PICKUP, blockPos);
-                return TypedActionResult.success(this.fill(itemStack, user, PotionUtil.setPotion(new ItemStack(Items.POTION), Potions.WATER)), world.isClient());
+                world.emitGameEvent((Entity)user, GameEvent.FLUID_PICKUP, blockPos);
+                return TypedActionResult.success(this.fill(itemStack, user, new ItemStack(ModItems.WATER_PERFUME_BOTTLE)), world.isClient());
             }
         }
         return TypedActionResult.pass(itemStack);
