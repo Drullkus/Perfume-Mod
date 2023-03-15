@@ -1,8 +1,9 @@
 package net.anvian.perfume.items;
 
 import net.anvian.perfume.PerfumeMod;
-import net.anvian.perfume.items.custom.CarrotPerfume;
+import net.anvian.perfume.effects.ModStatusEffects;
 import net.anvian.perfume.items.custom.ModPerfumeBottle;
+import net.anvian.perfume.items.custom.PerfumeBottle;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
@@ -22,11 +23,12 @@ public class ModItems {
                     .group(ModItemGroup.PERFUME_GROUP)
     ));
 
-    public static final Item CARROT_PERFUME = registerItem("carrot_perfume", new CarrotPerfume(
+    public static final Item CARROT_PERFUME = registerItem("carrot_perfume", new PerfumeBottle(
        new FabricItemSettings()
                .maxCount(1)
                .maxDamage(25)
                .group(ModItemGroup.PERFUME_GROUP)
+            , ModStatusEffects.CarrotEffect, 6000, 0
     ));
 
     public static Item registerItem(String name, Item item){

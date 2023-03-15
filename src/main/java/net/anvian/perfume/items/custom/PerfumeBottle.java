@@ -1,9 +1,9 @@
 package net.anvian.perfume.items.custom;
 
-import net.anvian.perfume.effects.ModStatusEffects;
 import net.anvian.perfume.items.ModItems;
 import net.anvian.perfume.sound.ModSounds;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -16,10 +16,16 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
 import net.minecraft.world.World;
 
-public class CarrotPerfume extends Item {
+public class PerfumeBottle extends Item {
+    private final StatusEffect statusEffect;
+    private final int duration;
+    private final int amplifier;
 
-    public CarrotPerfume(Settings settings) {
+    public PerfumeBottle(Settings settings, StatusEffect statusEffect, int duration, int amplifier) {
         super(settings);
+        this.statusEffect = statusEffect;
+        this.duration = duration;
+        this.amplifier = amplifier;
     }
 
     private static final int setMaxUseTime = 10;
@@ -46,7 +52,7 @@ public class CarrotPerfume extends Item {
             serverPlayerEntity.getItemCooldownManager().set(this, 5);
         }
 
-        user.addStatusEffect(new StatusEffectInstance(ModStatusEffects.CarrotEffect, 6000, 0));
+        user.addStatusEffect(new StatusEffectInstance(statusEffect, duration, amplifier));
 
         stack.damage(1, user, (entity) -> entity.sendToolBreakStatus(hand));
 
