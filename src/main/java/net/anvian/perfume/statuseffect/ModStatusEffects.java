@@ -1,6 +1,7 @@
-package net.anvian.perfume.effects;
+package net.anvian.perfume.statuseffect;
 
 import net.anvian.perfume.PerfumeMod;
+import net.anvian.perfume.statuseffect.effect.CarrotEffect;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;

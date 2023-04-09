@@ -28,7 +28,7 @@ public class PerfumeBottle extends Item {
         this.amplifier = amplifier;
     }
 
-    private static final int setMaxUseTime = 10;
+    private static final int setMaxUseTime = 5;
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
@@ -71,11 +71,6 @@ public class PerfumeBottle extends Item {
 
     @Override
     public SoundEvent getDrinkSound() {
-        return ModSounds.PERFUME_SOUND;
-    }
-
-    @Override
-    public SoundEvent getEatSound() {
         return ModSounds.PERFUME_SOUND;
     }
 }

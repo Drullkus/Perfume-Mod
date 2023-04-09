@@ -1,15 +1,21 @@
-package net.anvian.perfume.effects;
+package net.anvian.perfume.statuseffect.effect;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class CarrotEffect extends StatusEffect {
-    protected CarrotEffect() {
+    public CarrotEffect() {
         super(StatusEffectCategory.BENEFICIAL, 0xffa500);
     }
 
     @Override
     public boolean canApplyUpdateEffect(int duration, int amplifier) {
-        return true;
+        return duration % 7 == 0;
+    }
+
+    @Override
+    public void applyUpdateEffect(LivingEntity entity, int amplifier) {
+
     }
 }

@@ -1,6 +1,6 @@
 package net.anvian.perfume;
 
-import net.anvian.perfume.effects.ModStatusEffects;
+import net.anvian.perfume.statuseffect.ModStatusEffects;
 import net.anvian.perfume.items.ModItems;
 import net.anvian.perfume.sound.ModSounds;
 import net.fabricmc.api.ModInitializer;

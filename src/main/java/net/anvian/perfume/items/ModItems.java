@@ -1,7 +1,7 @@
 package net.anvian.perfume.items;
 
 import net.anvian.perfume.PerfumeMod;
-import net.anvian.perfume.effects.ModStatusEffects;
+import net.anvian.perfume.statuseffect.ModStatusEffects;
 import net.anvian.perfume.items.custom.ModPerfumeBottle;
 import net.anvian.perfume.items.custom.ModPerfumeWaterBottle;
 import net.anvian.perfume.items.custom.PerfumeBottle;
