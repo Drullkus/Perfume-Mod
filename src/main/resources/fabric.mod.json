@@ -19,7 +19,7 @@
           "net.anvian.perfume.PerfumeMod"
 		],
 		"fabric-datagen": [
-          "net.anvian.perfume.dataGen.ExampleModDataGenerator"
+          "net.anvian.perfume.dataGen.PerfumeModDataGenerator"
 		]
 	},
 	"mixins": [
