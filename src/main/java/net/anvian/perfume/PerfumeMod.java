@@ -1,8 +1,8 @@
 package net.anvian.perfume;
 
-import net.anvian.perfume.statuseffect.ModStatusEffects;
 import net.anvian.perfume.items.ModItems;
 import net.anvian.perfume.sound.ModSounds;
+import net.anvian.perfume.statuseffect.ModStatusEffects;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
