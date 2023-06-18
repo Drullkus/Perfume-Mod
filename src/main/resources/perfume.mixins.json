@@ -3,7 +3,7 @@
   "package": "net.anvian.perfume.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "CowInitGoalMixin"
+    "PigInitGoalMixin"
   ],
   "injectors": {
     "defaultRequire": 1
