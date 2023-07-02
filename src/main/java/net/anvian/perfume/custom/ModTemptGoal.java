@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.EnumSet;
 
-public class PigTemptGoal extends Goal {
+public class ModTemptGoal extends Goal {
     private static final TargetPredicate TEMPTING_ENTITY_PREDICATE = TargetPredicate.createNonAttackable().setBaseMaxDistance(10.0).ignoreVisibility();
     private final TargetPredicate predicate;
     protected final PathAwareEntity mob;
@@ -28,7 +28,7 @@ public class PigTemptGoal extends Goal {
     private final StatusEffect statusEffect;
     private final boolean canBeScared;
 
-    public PigTemptGoal(PathAwareEntity entity, double speed, StatusEffect statusEffect, boolean canBeScared) {
+    public ModTemptGoal(PathAwareEntity entity, double speed, StatusEffect statusEffect, boolean canBeScared) {
         this.mob = entity;
         this.speed = speed;
         this.statusEffect = statusEffect;

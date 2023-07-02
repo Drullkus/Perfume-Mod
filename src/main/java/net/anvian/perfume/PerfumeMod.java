@@ -13,7 +13,6 @@ public class PerfumeMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
 		ModItems.registerModItems();
 
 		ModStatusEffects.registerEffects();

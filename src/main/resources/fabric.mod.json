@@ -9,7 +9,8 @@
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/anviaan/Perfume-Mod",
+		"issues": "https://github.com/anviaan/Perfume-Mod/issues"
 	},
 	"contributors": [
 		"PinhaColada2222"
