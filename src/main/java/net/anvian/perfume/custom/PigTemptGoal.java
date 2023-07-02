@@ -1,6 +1,5 @@
 package net.anvian.perfume.custom;
 
-import net.anvian.perfume.statuseffect.ModStatusEffects;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.TargetPredicate;
 import net.minecraft.entity.ai.goal.Goal;
@@ -49,7 +48,10 @@ public class PigTemptGoal extends Goal {
     }
 
     private boolean isTemptedBy(LivingEntity entity) {
-        return this.statusEffect.equals(ModStatusEffects.CarrotEffect);
+        if (entity instanceof PlayerEntity){
+            return entity.getActiveStatusEffects().containsKey(statusEffect);
+        }
+        return false;
     }
 
     @Override

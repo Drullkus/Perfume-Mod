@@ -22,7 +22,7 @@ public abstract class PigInitGoalMixin extends AnimalEntity {
 
     @Inject(method = "initGoals()V", at=@At("HEAD"))
     private void init(CallbackInfo ci){
-        this.goalSelector.add(4,new PigTemptGoal(this, 1.25, ModStatusEffects.CarrotEffect, false));
+        this.goalSelector.add(4,new PigTemptGoal(this, 1.2, ModStatusEffects.CarrotEffect, false));
     }
 
     @Nullable
