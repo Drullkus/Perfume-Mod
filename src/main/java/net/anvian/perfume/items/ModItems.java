@@ -1,10 +1,10 @@
 package net.anvian.perfume.items;
 
 import net.anvian.perfume.PerfumeMod;
-import net.anvian.perfume.statuseffect.ModStatusEffects;
 import net.anvian.perfume.items.custom.ModPerfumeBottle;
 import net.anvian.perfume.items.custom.ModPerfumeWaterBottle;
 import net.anvian.perfume.items.custom.PerfumeBottle;
+import net.anvian.perfume.statuseffect.ModStatusEffects;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
@@ -31,7 +31,23 @@ public class ModItems {
                .maxCount(1)
                .maxDamage(setMaxDamage)
                .group(ModItemGroup.PERFUME_GROUP)
-            , ModStatusEffects.CarrotEffect, 6000, 0
+            , ModStatusEffects.CarrotEffect, 3000, 0
+    ));
+
+    public static final Item WHEAT_PERFUME = registerItem("wheat_perfume", new PerfumeBottle(
+            new FabricItemSettings()
+                    .maxCount(1)
+                    .maxDamage(setMaxDamage)
+                    .group(ModItemGroup.PERFUME_GROUP)
+            , ModStatusEffects.WheatEffect, 3000, 0
+    ));
+
+    public static final Item FLOWER_PERFUME = registerItem("flower_perfume", new PerfumeBottle(
+            new FabricItemSettings()
+                    .maxCount(1)
+                    .maxDamage(setMaxDamage)
+                    .group(ModItemGroup.PERFUME_GROUP)
+            , ModStatusEffects.FlowerEffect, 3000, 0
     ));
 
     public static Item registerItem(String name, Item item){

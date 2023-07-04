@@ -3,7 +3,7 @@
 	"id": "perfume",
 	"version": "${version}",
 	"name": "Perfume Mod",
-	"description": "",
+	"description": "Add perfumes which will give you a pleasant scent for the mobs and make them follow you.",
 	"authors": [
 		"anvian"
 	],

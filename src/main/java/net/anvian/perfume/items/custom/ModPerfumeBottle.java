@@ -46,7 +46,7 @@ public class ModPerfumeBottle extends Item {
         return TypedActionResult.pass(itemStack);
     }
 
-    private ItemStack fill(ItemStack stack, PlayerEntity player, ItemStack outputStack) {
+    protected ItemStack fill(ItemStack stack, PlayerEntity player, ItemStack outputStack) {
         player.incrementStat(Stats.USED.getOrCreateStat(this));
         return ItemUsage.exchangeStack(stack, player, outputStack);
     }
