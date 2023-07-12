@@ -5,7 +5,7 @@ import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class FlowerEffect extends StatusEffect {
     public FlowerEffect() {
-        super(StatusEffectCategory.BENEFICIAL, 0x55ab2d);
+        super(StatusEffectCategory.BENEFICIAL, 0xe7bde6);
     }
 
     @Override
