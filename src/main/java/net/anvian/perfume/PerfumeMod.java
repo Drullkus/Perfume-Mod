@@ -17,6 +17,8 @@ public class PerfumeMod implements ModInitializer {
 
 		ModItems.registerModItems();
 
+		ModBlocks.registerModBlock();
+
 		ModStatusEffects.registerEffects();
 
 		ModSounds.registerModSound();

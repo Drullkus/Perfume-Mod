@@ -22,6 +22,9 @@
 		"main": [
           "net.anvian.perfume.PerfumeMod"
 		],
+		"client": [
+			"net.anvian.perfume.PerfumeModClient"
+		],
 		"fabric-datagen": [
           "net.anvian.perfume.dataGen.PerfumeModDataGenerator"
 		]
