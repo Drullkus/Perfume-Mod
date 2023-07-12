@@ -5,7 +5,7 @@
       "item": "perfume:water_perfume_bottle"
     },
     {
-      "item": "minecraft:pink_tulip"
+      "tag": "minecraft:flowers"
     }
   ],
   "output": {
