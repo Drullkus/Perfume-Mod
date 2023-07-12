@@ -1,0 +1,14 @@
+{
+  "type": "perfume:mesa",
+  "ingredients": [
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "minecraft:wheat"
+    }
+  ],
+  "output": {
+    "item": "perfume:wheat_perfume"
+  }
+}

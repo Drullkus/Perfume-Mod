@@ -1,0 +1,14 @@
+{
+  "type": "perfume:mesa",
+  "ingredients": [
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:carrot"
+    }
+  ],
+  "output": {
+    "item": "perfume:carrot_perfume"
+  }
+}

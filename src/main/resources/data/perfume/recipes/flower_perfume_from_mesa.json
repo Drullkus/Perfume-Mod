@@ -1,0 +1,14 @@
+{
+  "type": "perfume:mesa",
+  "ingredients": [
+    {
+      "item": "minecraft:pink_tulip"
+    },
+    {
+      "item": "minecraft:pink_tulip"
+    }
+  ],
+  "output": {
+    "item": "perfume:flower_perfume"
+  }
+}
