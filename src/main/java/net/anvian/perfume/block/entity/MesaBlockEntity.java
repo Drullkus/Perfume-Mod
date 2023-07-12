@@ -3,7 +3,6 @@ package net.anvian.perfume.block.entity;
 import net.anvian.perfume.recipe.MesaRecipe;
 import net.anvian.perfume.screen.MesaScreenHandlers;
 import net.anvian.perfume.screen.inventory.ImplementedInventory;
-import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -38,21 +37,21 @@ public class MesaBlockEntity extends BlockEntity implements NamedScreenHandlerFa
         super(ModBlockEntities.MESA, pos, state);
         this.propertyDelegate = new PropertyDelegate() {
             public int get(int index) {
-                switch (index) {
-                    case 0: return MesaBlockEntity.this.progress;
-                    case 1: return MesaBlockEntity.this.maxProgress;
-                    case 2: return MesaBlockEntity.this.fuelTime;
-                    case 3: return MesaBlockEntity.this.maxFuelTime;
-                    default: return 0;
-                }
+                return switch (index) {
+                    case 0 -> MesaBlockEntity.this.progress;
+                    case 1 -> MesaBlockEntity.this.maxProgress;
+                    case 2 -> MesaBlockEntity.this.fuelTime;
+                    case 3 -> MesaBlockEntity.this.maxFuelTime;
+                    default -> 0;
+                };
             }
 
             public void set(int index, int value) {
-                switch(index) {
-                    case 0: MesaBlockEntity.this.progress = value; break;
-                    case 1: MesaBlockEntity.this.maxProgress = value; break;
-                    case 2: MesaBlockEntity.this.fuelTime = value; break;
-                    case 3: MesaBlockEntity.this.maxFuelTime = value; break;
+                switch (index) {
+                    case 0 -> MesaBlockEntity.this.progress = value;
+                    case 1 -> MesaBlockEntity.this.maxProgress = value;
+                    case 2 -> MesaBlockEntity.this.fuelTime = value;
+                    case 3 -> MesaBlockEntity.this.maxFuelTime = value;
                 }
             }
 
