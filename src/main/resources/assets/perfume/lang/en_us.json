@@ -6,6 +6,10 @@
 
   "item.perfume.carrot_perfume" : "Carrot perfume",
   "effect.perfume.carrot_effect": "Carrot perfume",
+  "item.perfume.wheat_perfume" : "Wheat perfume",
+  "effect.perfume.wheat_effect": "Wheat perfume",
+  "item.perfume.flower_perfume" : "Flower perfume",
+  "effect.perfume.flower_effect": "Flower perfume",
 
   "subtitles.perfume.perfume_sound": "Sound of perfume"
 }
