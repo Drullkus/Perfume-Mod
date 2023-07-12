@@ -1,4 +1,4 @@
-package net.anvian.perfume.items;
+package net.anvian.perfume.item;
 
 import net.anvian.perfume.PerfumeMod;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;

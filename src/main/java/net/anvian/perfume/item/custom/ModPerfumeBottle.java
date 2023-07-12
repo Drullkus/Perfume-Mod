@@ -1,6 +1,6 @@
-package net.anvian.perfume.items.custom;
+package net.anvian.perfume.item.custom;
 
-import net.anvian.perfume.items.ModItems;
+import net.anvian.perfume.item.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.GlassBottleItem;

@@ -1,9 +1,9 @@
-package net.anvian.perfume.items;
+package net.anvian.perfume.item;
 
 import net.anvian.perfume.PerfumeMod;
-import net.anvian.perfume.items.custom.ModPerfumeBottle;
-import net.anvian.perfume.items.custom.ModPerfumeWaterBottle;
-import net.anvian.perfume.items.custom.PerfumeBottle;
+import net.anvian.perfume.item.custom.ModPerfumeBottle;
+import net.anvian.perfume.item.custom.ModPerfumeWaterBottle;
+import net.anvian.perfume.item.custom.PerfumeBottle;
 import net.anvian.perfume.statuseffect.ModStatusEffects;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
