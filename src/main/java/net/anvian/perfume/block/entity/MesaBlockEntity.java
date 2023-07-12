@@ -96,10 +96,11 @@ public class MesaBlockEntity extends BlockEntity implements NamedScreenHandlerFa
         maxFuelTime = nbt.getInt("mesa.maxFuelTime");
     }
 
-    private void consumeFuel() {
+    private void consumeFuel(MesaBlockEntity entity) {
         if(!getStack(0).isEmpty()) {
-            this.fuelTime = FuelRegistry.INSTANCE.get(this.removeStack(0, 1).getItem());
+            this.fuelTime = 50;
             this.maxFuelTime = this.fuelTime;
+            entity.removeStack(0,1);
         }
     }
 
@@ -110,7 +111,7 @@ public class MesaBlockEntity extends BlockEntity implements NamedScreenHandlerFa
 
         if(hasRecipe(entity)) {
             if(hasFuelInFuelSlot(entity) && !isConsumingFuel(entity)) {
-                entity.consumeFuel();
+                entity.consumeFuel(entity);
             }
             if(isConsumingFuel(entity)) {
                 entity.progress++;
