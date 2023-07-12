@@ -1,6 +1,5 @@
 package net.anvian.perfume.screen;
 
-import net.anvian.perfume.screen.slot.ModFuelSlot;
 import net.anvian.perfume.screen.slot.ModResultSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
