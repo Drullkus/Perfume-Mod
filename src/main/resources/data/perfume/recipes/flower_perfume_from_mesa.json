@@ -2,7 +2,7 @@
   "type": "perfume:mesa",
   "ingredients": [
     {
-      "item": "minecraft:pink_tulip"
+      "item": "perfume:water_perfume_bottle"
     },
     {
       "item": "minecraft:pink_tulip"

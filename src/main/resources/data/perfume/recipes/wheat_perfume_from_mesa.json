@@ -2,7 +2,7 @@
   "type": "perfume:mesa",
   "ingredients": [
     {
-      "item": "minecraft:wheat"
+      "item": "perfume:water_perfume_bottle"
     },
     {
       "item": "minecraft:wheat"
