@@ -10,6 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+@SuppressWarnings("unused")
 public class ModItems {
     private static final int setMaxDamage = 25;
 
@@ -31,7 +32,7 @@ public class ModItems {
                .maxCount(1)
                .maxDamage(setMaxDamage)
                .group(ModItemGroup.PERFUME_GROUP)
-            , ModStatusEffects.CarrotEffect, 3000, 0
+            , ModStatusEffects.CARROT_EFFECT, 3000, 0
     ));
 
     public static final Item WHEAT_PERFUME = registerItem("wheat_perfume", new PerfumeBottle(
@@ -39,7 +40,7 @@ public class ModItems {
                     .maxCount(1)
                     .maxDamage(setMaxDamage)
                     .group(ModItemGroup.PERFUME_GROUP)
-            , ModStatusEffects.WheatEffect, 3000, 0
+            , ModStatusEffects.WHEAT_EFFECT, 3000, 0
     ));
 
     public static final Item FLOWER_PERFUME = registerItem("flower_perfume", new PerfumeBottle(
@@ -47,10 +48,26 @@ public class ModItems {
                     .maxCount(1)
                     .maxDamage(setMaxDamage)
                     .group(ModItemGroup.PERFUME_GROUP)
-            , ModStatusEffects.FlowerEffect, 3000, 0
+            , ModStatusEffects.FLOWER_EFFECT, 3000, 0
     ));
 
-    public static Item registerItem(String name, Item item){
+    public static final Item FISH_PERFUME = registerItem("fish_perfume", new PerfumeBottle(
+            new FabricItemSettings()
+                    .maxCount(1)
+                    .maxDamage(setMaxDamage)
+                    .group(ModItemGroup.PERFUME_GROUP)
+            , ModStatusEffects.FISH_EFFECT, 3000, 0
+    ));
+
+    public static final Item IRON_PERFUME = registerItem("iron_perfume", new PerfumeBottle(
+            new FabricItemSettings()
+                    .maxCount(1)
+                    .maxDamage(setMaxDamage)
+                    .group(ModItemGroup.PERFUME_GROUP)
+            , ModStatusEffects.IRON_EFFECT, 3000, 0
+    ));
+
+    private static Item registerItem(String name, Item item){
         return Registry.register(Registry.ITEM, new Identifier(PerfumeMod.MOD_ID, name), item);
     }
 

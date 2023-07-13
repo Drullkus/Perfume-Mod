@@ -1,0 +1,14 @@
+{
+  "type": "perfume:mesa",
+  "ingredients": [
+    {
+      "item": "perfume:water_perfume_bottle"
+    },
+    {
+      "tag": "minecraft:fishes"
+    }
+  ],
+  "output": {
+    "item": "perfume:fish_perfume"
+  }
+}

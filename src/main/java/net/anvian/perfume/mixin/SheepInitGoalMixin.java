@@ -22,7 +22,7 @@ public class SheepInitGoalMixin extends AnimalEntity {
 
     @Inject(method = "initGoals()V", at=@At("HEAD"))
     private void init(CallbackInfo ci){
-        this.goalSelector.add(3,new ModTemptGoal(this, 1.1, ModStatusEffects.WheatEffect, false));
+        this.goalSelector.add(3,new ModTemptGoal(this, 1.1, ModStatusEffects.WHEAT_EFFECT, false));
     }
 
     @Nullable

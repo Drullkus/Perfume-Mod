@@ -10,6 +10,10 @@
   "effect.perfume.wheat_effect": "Wheat perfume",
   "item.perfume.flower_perfume" : "Flower perfume",
   "effect.perfume.flower_effect": "Flower perfume",
+  "item.perfume.fish_perfume" : "Fish perfume",
+  "effect.perfume.fish_effect": "Fish perfume",
+  "item.perfume.iron_perfume" : "Iron perfume",
+  "effect.perfume.iron_effect": "Iron perfume",
 
   "subtitles.perfume.perfume_sound": "Sound of perfume"
 }

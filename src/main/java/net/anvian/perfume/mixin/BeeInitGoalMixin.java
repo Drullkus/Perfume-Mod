@@ -22,7 +22,7 @@ public class BeeInitGoalMixin extends AnimalEntity {
 
     @Inject(method = "initGoals()V", at=@At("HEAD"))
     private void init(CallbackInfo ci){
-        this.goalSelector.add(3,new ModTemptGoal(this, 1.25, ModStatusEffects.FlowerEffect, false));
+        this.goalSelector.add(3,new ModTemptGoal(this, 1.25, ModStatusEffects.FLOWER_EFFECT, false));
     }
 
     @Nullable

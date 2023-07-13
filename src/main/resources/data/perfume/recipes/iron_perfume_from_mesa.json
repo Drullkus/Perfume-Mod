@@ -1,0 +1,14 @@
+{
+  "type": "perfume:mesa",
+  "ingredients": [
+    {
+      "item": "perfume:water_perfume_bottle"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "output": {
+    "item": "perfume:iron_perfume"
+  }
+}
