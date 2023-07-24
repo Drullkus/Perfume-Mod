@@ -9,11 +9,11 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-public class MesaScreen extends HandledScreen<MesaScreenHandlers> {
+public class PerfumeMachineScreen extends HandledScreen<PerfumeMachineScreenHandlers> {
     private static final Identifier TEXTURE =
             new Identifier(PerfumeMod.MOD_ID, "textures/gui/mesa_gui.png");
 
-    public MesaScreen(MesaScreenHandlers handler, PlayerInventory inventory, Text title) {
+    public PerfumeMachineScreen(PerfumeMachineScreenHandlers handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }
 

@@ -6,9 +6,9 @@ import net.minecraft.util.registry.Registry;
 
 public class ModRecipe {
     public static void registerRecipes() {
-        Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(PerfumeMod.MOD_ID, MesaRecipe.Serializer.ID),
-                MesaRecipe.Serializer.INSTANCE);
-        Registry.register(Registry.RECIPE_TYPE, new Identifier(PerfumeMod.MOD_ID, MesaRecipe.Type.ID),
-                MesaRecipe.Type.INSTANCE);
+        Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(PerfumeMod.MOD_ID, PerfumeMachineRecipe.Serializer.ID),
+                PerfumeMachineRecipe.Serializer.INSTANCE);
+        Registry.register(Registry.RECIPE_TYPE, new Identifier(PerfumeMod.MOD_ID, PerfumeMachineRecipe.Type.ID),
+                PerfumeMachineRecipe.Type.INSTANCE);
     }
 }

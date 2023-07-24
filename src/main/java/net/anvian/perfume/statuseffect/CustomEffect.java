@@ -1,11 +1,11 @@
-package net.anvian.perfume.statuseffect.effect;
+package net.anvian.perfume.statuseffect;
 
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
-public class ModEffect extends StatusEffect {
+public class CustomEffect extends StatusEffect {
 
-    public ModEffect(int color) {
+    public CustomEffect(int color) {
         super(StatusEffectCategory.BENEFICIAL, color);
     }
 

@@ -6,7 +6,7 @@ import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 
 public class ModScreenHandlers {
-    public static ScreenHandlerType<MesaScreenHandlers> MESA_SCREEN_HANDLER =
+    public static ScreenHandlerType<PerfumeMachineScreenHandlers> MESA_SCREEN_HANDLER =
             ScreenHandlerRegistry.registerSimple(new Identifier(PerfumeMod.MOD_ID, "mesa"),
-                    MesaScreenHandlers::new);
+                    PerfumeMachineScreenHandlers::new);
 }

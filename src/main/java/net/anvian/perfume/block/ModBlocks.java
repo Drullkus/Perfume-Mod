@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class ModBlocks {
-    public static final Block MESA = registerBlock("mesa",
+    public static final Block PERFUME_MACHINE = registerBlock("perfume_machine",
             new CustomMesa(FabricBlockSettings.of(Material.METAL)));
 
     private static Block registerBlock(String name, Block block){

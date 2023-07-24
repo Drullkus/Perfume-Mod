@@ -1,7 +1,7 @@
 package net.anvian.perfume.block.entity;
 
-import net.anvian.perfume.recipe.MesaRecipe;
-import net.anvian.perfume.screen.MesaScreenHandlers;
+import net.anvian.perfume.recipe.PerfumeMachineRecipe;
+import net.anvian.perfume.screen.PerfumeMachineScreenHandlers;
 import net.anvian.perfume.screen.inventory.ImplementedInventory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -74,7 +74,7 @@ public class MesaBlockEntity extends BlockEntity implements NamedScreenHandlerFa
     @Nullable
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-        return new MesaScreenHandlers(syncId, inv, this, this.propertyDelegate);
+        return new PerfumeMachineScreenHandlers(syncId, inv, this, this.propertyDelegate);
     }
 
     @Override
@@ -138,8 +138,8 @@ public class MesaBlockEntity extends BlockEntity implements NamedScreenHandlerFa
             inventory.setStack(i, entity.getStack(i));
         }
 
-        Optional<MesaRecipe> match = world.getRecipeManager()
-                .getFirstMatch(MesaRecipe.Type.INSTANCE, inventory, world);
+        Optional<PerfumeMachineRecipe> match = world.getRecipeManager()
+                .getFirstMatch(PerfumeMachineRecipe.Type.INSTANCE, inventory, world);
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, match.get().getOutput());
@@ -152,8 +152,8 @@ public class MesaBlockEntity extends BlockEntity implements NamedScreenHandlerFa
             inventory.setStack(i, entity.getStack(i));
         }
 
-        Optional<MesaRecipe> match = world.getRecipeManager()
-                .getFirstMatch(MesaRecipe.Type.INSTANCE, inventory, world);
+        Optional<PerfumeMachineRecipe> match = world.getRecipeManager()
+                .getFirstMatch(PerfumeMachineRecipe.Type.INSTANCE, inventory, world);
 
         if(match.isPresent()) {
             entity.removeStack(1,1);

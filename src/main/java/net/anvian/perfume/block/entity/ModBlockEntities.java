@@ -14,6 +14,6 @@ public class ModBlockEntities {
         MESA = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 new Identifier(PerfumeMod.MOD_ID, "mesa"),
                 FabricBlockEntityTypeBuilder.create(MesaBlockEntity::new,
-                        ModBlocks.MESA).build(null));
+                        ModBlocks.PERFUME_MACHINE).build(null));
     }
 }

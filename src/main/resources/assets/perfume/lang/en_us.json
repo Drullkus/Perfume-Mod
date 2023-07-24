@@ -4,6 +4,8 @@
   "item.perfume.glass_perfume_bottle" : "Glass perfume bottle",
   "item.perfume.water_perfume_bottle" : "Water glass perfume bottle",
 
+  "block.perfume.perfume_machine" : "Perfume machine",
+
   "item.perfume.carrot_perfume" : "Carrot perfume",
   "effect.perfume.carrot_effect": "Carrot perfume",
   "item.perfume.wheat_perfume" : "Wheat perfume",

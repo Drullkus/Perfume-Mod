@@ -13,14 +13,14 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 
-public class MesaScreenHandlers extends ScreenHandler {
+public class PerfumeMachineScreenHandlers extends ScreenHandler {
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
 
-    public MesaScreenHandlers(int syncId, PlayerInventory playerInventory) {
+    public PerfumeMachineScreenHandlers(int syncId, PlayerInventory playerInventory) {
         this(syncId, playerInventory, new SimpleInventory(4), new ArrayPropertyDelegate(4));
     }
-    public MesaScreenHandlers(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
+    public PerfumeMachineScreenHandlers(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
         super(ModScreenHandlers.MESA_SCREEN_HANDLER, syncId);
         checkSize(inventory, 4);
         this.inventory = inventory;
