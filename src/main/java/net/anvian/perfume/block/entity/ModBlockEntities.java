@@ -12,7 +12,7 @@ public class ModBlockEntities {
 
     public static void registerAllBlockEntities() {
         PERFUME_MACHINE = Registry.register(Registry.BLOCK_ENTITY_TYPE,
-                new Identifier(PerfumeMod.MOD_ID, "mesa"),
+                new Identifier(PerfumeMod.MOD_ID, "perfume_machine"),
                 FabricBlockEntityTypeBuilder.create(PerfumeMachineBlockEntity::new,
                         ModBlocks.PERFUME_MACHINE).build(null));
     }
