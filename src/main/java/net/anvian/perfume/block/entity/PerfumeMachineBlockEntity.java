@@ -22,7 +22,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class MesaBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
+public class PerfumeMachineBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
 
     private final DefaultedList<ItemStack> inventory =
             DefaultedList.ofSize(4, ItemStack.EMPTY);
@@ -33,25 +33,25 @@ public class MesaBlockEntity extends BlockEntity implements NamedScreenHandlerFa
     private int fuelTime = 0;
     private int maxFuelTime = 0;
 
-    public MesaBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.MESA, pos, state);
+    public PerfumeMachineBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.PERFUME_MACHINE, pos, state);
         this.propertyDelegate = new PropertyDelegate() {
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> MesaBlockEntity.this.progress;
-                    case 1 -> MesaBlockEntity.this.maxProgress;
-                    case 2 -> MesaBlockEntity.this.fuelTime;
-                    case 3 -> MesaBlockEntity.this.maxFuelTime;
+                    case 0 -> PerfumeMachineBlockEntity.this.progress;
+                    case 1 -> PerfumeMachineBlockEntity.this.maxProgress;
+                    case 2 -> PerfumeMachineBlockEntity.this.fuelTime;
+                    case 3 -> PerfumeMachineBlockEntity.this.maxFuelTime;
                     default -> 0;
                 };
             }
 
             public void set(int index, int value) {
                 switch (index) {
-                    case 0 -> MesaBlockEntity.this.progress = value;
-                    case 1 -> MesaBlockEntity.this.maxProgress = value;
-                    case 2 -> MesaBlockEntity.this.fuelTime = value;
-                    case 3 -> MesaBlockEntity.this.maxFuelTime = value;
+                    case 0 -> PerfumeMachineBlockEntity.this.progress = value;
+                    case 1 -> PerfumeMachineBlockEntity.this.maxProgress = value;
+                    case 2 -> PerfumeMachineBlockEntity.this.fuelTime = value;
+                    case 3 -> PerfumeMachineBlockEntity.this.maxFuelTime = value;
                 }
             }
 
@@ -68,7 +68,7 @@ public class MesaBlockEntity extends BlockEntity implements NamedScreenHandlerFa
 
     @Override
     public Text getDisplayName() {
-        return Text.literal("Mesa Entity");
+        return Text.translatable("blockEntity.perfume_machine");
     }
 
     @Nullable
@@ -95,7 +95,7 @@ public class MesaBlockEntity extends BlockEntity implements NamedScreenHandlerFa
         maxFuelTime = nbt.getInt("mesa.maxFuelTime");
     }
 
-    private void consumeFuel(MesaBlockEntity entity) {
+    private void consumeFuel(PerfumeMachineBlockEntity entity) {
         if(!getStack(0).isEmpty()) {
             this.fuelTime = 50;
             this.maxFuelTime = this.fuelTime;
@@ -103,7 +103,7 @@ public class MesaBlockEntity extends BlockEntity implements NamedScreenHandlerFa
         }
     }
 
-    public static void tick(World world, BlockPos pos, BlockState state, MesaBlockEntity entity) {
+    public static void tick(World world, BlockPos pos, BlockState state, PerfumeMachineBlockEntity entity) {
         if(isConsumingFuel(entity)) {
             entity.fuelTime--;
         }
@@ -123,15 +123,15 @@ public class MesaBlockEntity extends BlockEntity implements NamedScreenHandlerFa
         }
     }
 
-    private static boolean hasFuelInFuelSlot(MesaBlockEntity entity) {
+    private static boolean hasFuelInFuelSlot(PerfumeMachineBlockEntity entity) {
         return !entity.getStack(0).isEmpty();
     }
 
-    private static boolean isConsumingFuel(MesaBlockEntity entity) {
+    private static boolean isConsumingFuel(PerfumeMachineBlockEntity entity) {
         return entity.fuelTime > 0;
     }
 
-    private static boolean hasRecipe(MesaBlockEntity entity) {
+    private static boolean hasRecipe(PerfumeMachineBlockEntity entity) {
         World world = entity.world;
         SimpleInventory inventory = new SimpleInventory(entity.inventory.size());
         for (int i = 0; i < entity.inventory.size(); i++) {
@@ -145,7 +145,7 @@ public class MesaBlockEntity extends BlockEntity implements NamedScreenHandlerFa
                 && canInsertItemIntoOutputSlot(inventory, match.get().getOutput());
     }
 
-    private static void craftItem(MesaBlockEntity entity) {
+    private static void craftItem(PerfumeMachineBlockEntity entity) {
         World world = entity.world;
         SimpleInventory inventory = new SimpleInventory(entity.inventory.size());
         for (int i = 0; i < entity.inventory.size(); i++) {

@@ -1,6 +1,6 @@
 package net.anvian.perfume.block.custom;
 
-import net.anvian.perfume.block.entity.MesaBlockEntity;
+import net.anvian.perfume.block.entity.PerfumeMachineBlockEntity;
 import net.anvian.perfume.block.entity.ModBlockEntities;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -16,8 +16,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class CustomMesa extends BlockWithEntity implements BlockEntityProvider {
-    public CustomMesa(Settings settings) {
+public class CustomPerfumeMachine extends BlockWithEntity implements BlockEntityProvider {
+    public CustomPerfumeMachine(Settings settings) {
         super(settings);
     }
 
@@ -25,8 +25,8 @@ public class CustomMesa extends BlockWithEntity implements BlockEntityProvider {
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof MesaBlockEntity) {
-                ItemScatterer.spawn(world, pos, (MesaBlockEntity)blockEntity);
+            if (blockEntity instanceof PerfumeMachineBlockEntity) {
+                ItemScatterer.spawn(world, pos, (PerfumeMachineBlockEntity)blockEntity);
                 world.updateComparators(pos,this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
@@ -55,12 +55,12 @@ public class CustomMesa extends BlockWithEntity implements BlockEntityProvider {
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new MesaBlockEntity(pos, state);
+        return new PerfumeMachineBlockEntity(pos, state);
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, ModBlockEntities.MESA, MesaBlockEntity::tick);
+        return checkType(type, ModBlockEntities.PERFUME_MACHINE, PerfumeMachineBlockEntity::tick);
     }
 }

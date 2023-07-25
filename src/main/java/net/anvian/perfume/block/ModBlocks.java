@@ -1,7 +1,7 @@
 package net.anvian.perfume.block;
 
 import net.anvian.perfume.PerfumeMod;
-import net.anvian.perfume.block.custom.CustomMesa;
+import net.anvian.perfume.block.custom.CustomPerfumeMachine;
 import net.anvian.perfume.item.ModItemGroup;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -14,7 +14,7 @@ import net.minecraft.util.registry.Registry;
 
 public class ModBlocks {
     public static final Block PERFUME_MACHINE = registerBlock("perfume_machine",
-            new CustomMesa(FabricBlockSettings.of(Material.METAL)));
+            new CustomPerfumeMachine(FabricBlockSettings.of(Material.METAL)));
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);

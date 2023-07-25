@@ -8,12 +8,12 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 public class ModBlockEntities {
-    public static BlockEntityType<MesaBlockEntity> MESA;
+    public static BlockEntityType<PerfumeMachineBlockEntity> PERFUME_MACHINE;
 
     public static void registerAllBlockEntities() {
-        MESA = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+        PERFUME_MACHINE = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 new Identifier(PerfumeMod.MOD_ID, "mesa"),
-                FabricBlockEntityTypeBuilder.create(MesaBlockEntity::new,
+                FabricBlockEntityTypeBuilder.create(PerfumeMachineBlockEntity::new,
                         ModBlocks.PERFUME_MACHINE).build(null));
     }
 }
