@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 
 public class PerfumeMachineScreen extends HandledScreen<PerfumeMachineScreenHandlers> {
     private static final Identifier TEXTURE =
-            new Identifier(PerfumeMod.MOD_ID, "textures/gui/mesa_gui.png");
+            new Identifier(PerfumeMod.MOD_ID, "textures/gui/perfume_machine_gui.png");
 
     public PerfumeMachineScreen(PerfumeMachineScreenHandlers handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
