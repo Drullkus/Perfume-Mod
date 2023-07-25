@@ -1,5 +1,5 @@
 {
-  "type": "perfume:perfume_machine",
+  "type": "perfume:mesa",
   "ingredients": [
     {
       "item": "perfume:water_perfume_bottle"
