@@ -12,7 +12,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.EnumSet;
 
 public class ModTemptGoal extends Goal {
-    private static final TargetPredicate TEMPTING_ENTITY_PREDICATE = TargetPredicate.createNonAttackable().setBaseMaxDistance(10.0).ignoreVisibility();
+    //more distance
+    private static final TargetPredicate TEMPTING_ENTITY_PREDICATE = TargetPredicate.createNonAttackable().setBaseMaxDistance(15.0).ignoreVisibility();
     private final TargetPredicate predicate;
     protected final PathAwareEntity mob;
     private final double speed;
