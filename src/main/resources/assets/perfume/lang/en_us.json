@@ -7,8 +7,8 @@
   "block.perfume.perfume_machine" : "Perfume machine",
   "blockEntity.perfume_machine" : "Perfume machine",
 
-  "block.perfume.essence_extractor" : "Essence_extractor",
-  "blockEntity.essence_extractor" : "Essence_extractor",
+  "block.perfume.essence_extractor" : "Essence extractor",
+  "blockEntity.essence_extractor" : "Essence extractor",
 
   "item.perfume.carrot_perfume" : "Carrot perfume",
   "effect.perfume.carrot_effect": "Carrot perfume",
