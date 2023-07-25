@@ -9,4 +9,8 @@ public class ModScreenHandlers {
     public static ScreenHandlerType<PerfumeMachineScreenHandlers> PERFUME_MACHINE_SCREEN_HANDLER =
             ScreenHandlerRegistry.registerSimple(new Identifier(PerfumeMod.MOD_ID, "perfume_machine"),
                     PerfumeMachineScreenHandlers::new);
+
+    public static ScreenHandlerType<EssenceExtractorScreenHandlers> ESSENCE_EXTRACTOR_SCREEN_HANDLER =
+            ScreenHandlerRegistry.registerSimple(new Identifier(PerfumeMod.MOD_ID, "essence_extractor"),
+                    EssenceExtractorScreenHandlers::new);
 }

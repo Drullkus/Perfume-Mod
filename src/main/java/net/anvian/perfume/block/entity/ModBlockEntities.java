@@ -9,11 +9,17 @@ import net.minecraft.util.registry.Registry;
 
 public class ModBlockEntities {
     public static BlockEntityType<PerfumeMachineBlockEntity> PERFUME_MACHINE;
+    public static BlockEntityType<EssenceExtractorBlockEntity> ESSENCE_EXTRACTOR;
 
     public static void registerAllBlockEntities() {
         PERFUME_MACHINE = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 new Identifier(PerfumeMod.MOD_ID, "perfume_machine"),
                 FabricBlockEntityTypeBuilder.create(PerfumeMachineBlockEntity::new,
                         ModBlocks.PERFUME_MACHINE).build(null));
+
+        ESSENCE_EXTRACTOR = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+                new Identifier(PerfumeMod.MOD_ID, "essence_extractor"),
+                FabricBlockEntityTypeBuilder.create(EssenceExtractorBlockEntity::new,
+                        ModBlocks.ESSENCE_EXTRACTOR).build(null));
     }
 }

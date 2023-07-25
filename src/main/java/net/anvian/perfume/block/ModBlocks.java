@@ -1,6 +1,7 @@
 package net.anvian.perfume.block;
 
 import net.anvian.perfume.PerfumeMod;
+import net.anvian.perfume.block.custom.CustomEssenceExtractor;
 import net.anvian.perfume.block.custom.CustomPerfumeMachine;
 import net.anvian.perfume.item.ModItemGroup;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -15,6 +16,9 @@ import net.minecraft.util.registry.Registry;
 public class ModBlocks {
     public static final Block PERFUME_MACHINE = registerBlock("perfume_machine",
             new CustomPerfumeMachine(FabricBlockSettings.of(Material.METAL)));
+
+    public static final Block ESSENCE_EXTRACTOR  = registerBlock("essence_extractor",
+            new CustomEssenceExtractor(FabricBlockSettings.of(Material.METAL)));
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);
