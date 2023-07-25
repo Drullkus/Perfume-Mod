@@ -14,6 +14,5 @@ public class PerfumeModClient implements ClientModInitializer {
     public void onInitializeClient() {
         ScreenRegistry.register(ModScreenHandlers.PERFUME_MACHINE_SCREEN_HANDLER, PerfumeMachineScreen::new);
         ScreenRegistry.register(ModScreenHandlers.ESSENCE_EXTRACTOR_SCREEN_HANDLER, EssenceExtractorScreen::new);
-
     }
 }
