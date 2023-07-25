@@ -11,6 +11,6 @@ import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 public class PerfumeModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        ScreenRegistry.register(ModScreenHandlers.MESA_SCREEN_HANDLER, PerfumeMachineScreen::new);
+        ScreenRegistry.register(ModScreenHandlers.PERFUME_MACHINE_SCREEN_HANDLER, PerfumeMachineScreen::new);
     }
 }

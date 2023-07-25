@@ -21,7 +21,7 @@ public class PerfumeMachineScreenHandlers extends ScreenHandler {
         this(syncId, playerInventory, new SimpleInventory(4), new ArrayPropertyDelegate(4));
     }
     public PerfumeMachineScreenHandlers(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
-        super(ModScreenHandlers.MESA_SCREEN_HANDLER, syncId);
+        super(ModScreenHandlers.PERFUME_MACHINE_SCREEN_HANDLER, syncId);
         checkSize(inventory, 4);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
