@@ -1,14 +1,14 @@
 {
-  "type": "perfume:mesa",
+  "type": "perfume:perfume_machine",
   "ingredients": [
     {
       "item": "perfume:water_perfume_bottle"
     },
     {
-      "item": "minecraft:iron_ingot"
+      "tag": "minecraft:flowers"
     }
   ],
   "output": {
-    "item": "perfume:iron_perfume"
+    "item": "perfume:flower_perfume"
   }
 }

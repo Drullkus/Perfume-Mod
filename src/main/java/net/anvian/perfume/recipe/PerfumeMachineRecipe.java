@@ -72,7 +72,7 @@ public class PerfumeMachineRecipe implements Recipe<SimpleInventory> {
 
     public static class Serializer implements RecipeSerializer<PerfumeMachineRecipe> {
         public static final Serializer INSTANCE = new Serializer();
-        public static final String ID = "mesa";
+        public static final String ID = "perfume_machine";
         // this is the name given in the json file
 
         @Override

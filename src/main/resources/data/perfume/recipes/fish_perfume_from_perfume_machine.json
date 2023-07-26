@@ -1,14 +1,14 @@
 {
-  "type": "perfume:mesa",
+  "type": "perfume:perfume_machine",
   "ingredients": [
     {
       "item": "perfume:water_perfume_bottle"
     },
     {
-      "item": "minecraft:carrot"
+      "tag": "minecraft:fishes"
     }
   ],
   "output": {
-    "item": "perfume:carrot_perfume"
+    "item": "perfume:fish_perfume"
   }
 }
