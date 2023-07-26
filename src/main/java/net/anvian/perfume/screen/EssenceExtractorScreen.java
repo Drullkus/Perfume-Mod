@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 
 public class EssenceExtractorScreen extends HandledScreen<EssenceExtractorScreenHandlers> {
     private static final Identifier TEXTURE =
-            new Identifier(PerfumeMod.MOD_ID, "textures/gui/mesa_gui.png");
+            new Identifier(PerfumeMod.MOD_ID, "textures/gui/essence_extractor_gui.png");
 
     public EssenceExtractorScreen(EssenceExtractorScreenHandlers handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
@@ -33,7 +33,7 @@ public class EssenceExtractorScreen extends HandledScreen<EssenceExtractorScreen
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
 
         if(handler.isCrafting()) {
-            drawTexture(matrices, x + 84, y + 22, 176, 14, handler.getScaledProgress(), 36);
+            drawTexture(matrices, x + 84, y + 22, 176, 0, handler.getScaledProgress(), 36);
         }
 
         if(handler.hasFuel()) {

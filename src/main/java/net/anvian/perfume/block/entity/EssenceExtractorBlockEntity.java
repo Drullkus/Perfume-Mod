@@ -1,6 +1,6 @@
 package net.anvian.perfume.block.entity;
 
-import net.anvian.perfume.recipe.PerfumeMachineRecipe;
+import net.anvian.perfume.recipe.EssenceExtractorRecipe;
 import net.anvian.perfume.screen.EssenceExtractorScreenHandlers;
 import net.anvian.perfume.screen.inventory.ImplementedInventory;
 import net.minecraft.block.BlockState;
@@ -137,8 +137,8 @@ public class EssenceExtractorBlockEntity extends BlockEntity implements NamedScr
             inventory.setStack(i, entity.getStack(i));
         }
 
-        Optional<PerfumeMachineRecipe> match = world.getRecipeManager()
-                .getFirstMatch(PerfumeMachineRecipe.Type.INSTANCE, inventory, world);
+        Optional<EssenceExtractorRecipe> match = world.getRecipeManager()
+                .getFirstMatch(EssenceExtractorRecipe.Type.INSTANCE, inventory, world);
 
         return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
                 && canInsertItemIntoOutputSlot(inventory, match.get().getOutput());
@@ -151,8 +151,8 @@ public class EssenceExtractorBlockEntity extends BlockEntity implements NamedScr
             inventory.setStack(i, entity.getStack(i));
         }
 
-        Optional<PerfumeMachineRecipe> match = world.getRecipeManager()
-                .getFirstMatch(PerfumeMachineRecipe.Type.INSTANCE, inventory, world);
+        Optional<EssenceExtractorRecipe> match = world.getRecipeManager()
+                .getFirstMatch(EssenceExtractorRecipe.Type.INSTANCE, inventory, world);
 
         if(match.isPresent()) {
             entity.removeStack(1,1);

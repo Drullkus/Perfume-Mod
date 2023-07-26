@@ -10,5 +10,10 @@ public class ModRecipe {
                 PerfumeMachineRecipe.Serializer.INSTANCE);
         Registry.register(Registry.RECIPE_TYPE, new Identifier(PerfumeMod.MOD_ID, PerfumeMachineRecipe.Type.ID),
                 PerfumeMachineRecipe.Type.INSTANCE);
+
+        Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(PerfumeMod.MOD_ID, EssenceExtractorRecipe.Serializer.ID),
+                EssenceExtractorRecipe.Serializer.INSTANCE);
+        Registry.register(Registry.RECIPE_TYPE, new Identifier(PerfumeMod.MOD_ID, EssenceExtractorRecipe.Type.ID),
+                EssenceExtractorRecipe.Type.INSTANCE);
     }
 }

@@ -1,0 +1,14 @@
+{
+  "type": "perfume:essence_extractor",
+  "ingredients": [
+    {
+      "item": "perfume:water_perfume_bottle"
+    },
+    {
+      "item": "minecraft:carrot"
+    }
+  ],
+  "output": {
+    "item": "perfume:carrot_perfume"
+  }
+}
