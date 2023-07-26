@@ -7,12 +7,13 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
+import net.minecraft.client.gui.screen.ingame.HandledScreens;
 
 @Environment(EnvType.CLIENT)
 public class PerfumeModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        ScreenRegistry.register(ModScreenHandlers.PERFUME_MACHINE_SCREEN_HANDLER, PerfumeMachineScreen::new);
-        ScreenRegistry.register(ModScreenHandlers.ESSENCE_EXTRACTOR_SCREEN_HANDLER, EssenceExtractorScreen::new);
+        HandledScreens.register(ModScreenHandlers.PERFUME_MACHINE_SCREEN_HANDLER, PerfumeMachineScreen::new);
+        HandledScreens.register(ModScreenHandlers.ESSENCE_EXTRACTOR_SCREEN_HANDLER, EssenceExtractorScreen::new);
     }
 }
