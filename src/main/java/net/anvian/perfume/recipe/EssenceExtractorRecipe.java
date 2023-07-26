@@ -27,8 +27,8 @@ public class EssenceExtractorRecipe implements Recipe<SimpleInventory> {
     public boolean matches(SimpleInventory inventory, World world) {
         if(world.isClient()) { return false; }
 
-        if(recipeItems.get(0).test(inventory.getStack(1))) {
-            return recipeItems.get(1).test(inventory.getStack(2));
+        if(recipeItems.get(0).test(inventory.getStack(0))) {
+            return recipeItems.get(1).test(inventory.getStack(1));
         }
 
         return false;

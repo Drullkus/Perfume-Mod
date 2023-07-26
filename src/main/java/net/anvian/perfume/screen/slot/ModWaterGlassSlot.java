@@ -5,8 +5,8 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.slot.Slot;
 
-public class ModWaterGlass extends Slot {
-    public ModWaterGlass(Inventory inventory, int index, int x, int y) {
+public class ModWaterGlassSlot extends Slot {
+    public ModWaterGlassSlot(Inventory inventory, int index, int x, int y) {
         super(inventory, index, x, y);
     }
 

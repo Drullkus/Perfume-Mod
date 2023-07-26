@@ -1,8 +1,7 @@
 package net.anvian.perfume.screen;
 
-import net.anvian.perfume.screen.slot.ModFuelSlot;
 import net.anvian.perfume.screen.slot.ModResultSlot;
-import net.anvian.perfume.screen.slot.ModWaterGlass;
+import net.anvian.perfume.screen.slot.ModWaterGlassSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
@@ -18,20 +17,18 @@ public class EssenceExtractorScreenHandlers extends ScreenHandler {
     private final PropertyDelegate propertyDelegate;
 
     public EssenceExtractorScreenHandlers(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(4), new ArrayPropertyDelegate(4));
+        this(syncId, playerInventory, new SimpleInventory(3), new ArrayPropertyDelegate(3));
     }
     public EssenceExtractorScreenHandlers(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
         super(ModScreenHandlers.ESSENCE_EXTRACTOR_SCREEN_HANDLER, syncId);
-        checkSize(inventory, 4);
+        checkSize(inventory, 3);
         this.inventory = inventory;
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
 
-        //fuel
-        this.addSlot(new ModFuelSlot(inventory, 0, 18, 50));
-        this.addSlot(new ModWaterGlass(inventory, 1, 66, 16));
-        this.addSlot(new Slot(inventory, 2, 66, 50));
-        this.addSlot(new ModResultSlot(inventory, 3, 114, 33));
+        this.addSlot(new ModWaterGlassSlot(inventory, 0, 66, 16));
+        this.addSlot(new Slot(inventory, 1, 66, 50));
+        this.addSlot(new ModResultSlot(inventory, 2, 114, 33));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
@@ -43,24 +40,12 @@ public class EssenceExtractorScreenHandlers extends ScreenHandler {
         return propertyDelegate.get(0) > 0;
     }
 
-    public boolean hasFuel() {
-        return propertyDelegate.get(2) > 0;
-    }
-
     public int getScaledProgress() {
         int progress = this.propertyDelegate.get(0);
         int maxProgress = this.propertyDelegate.get(1);  // Max Progress
         int progressArrowSize = 26; // This is the width in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
-    }
-
-    public int getScaledFuelProgress() {
-        int fuelProgress = this.propertyDelegate.get(2);
-        int maxFuelProgress = this.propertyDelegate.get(3);
-        int fuelProgressSize = 14;
-
-        return maxFuelProgress != 0 ? (int)(((float)fuelProgress / (float)maxFuelProgress) * fuelProgressSize) : 0;
     }
 
     @Override

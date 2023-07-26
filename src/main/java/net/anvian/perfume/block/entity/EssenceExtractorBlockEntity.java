@@ -23,14 +23,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 public class EssenceExtractorBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory =
-            DefaultedList.ofSize(4, ItemStack.EMPTY);
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
 
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
     private int maxProgress = 72;
-    private int fuelTime = 0;
-    private int maxFuelTime = 0;
 
     public EssenceExtractorBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.ESSENCE_EXTRACTOR, pos, state);
@@ -39,8 +36,6 @@ public class EssenceExtractorBlockEntity extends BlockEntity implements NamedScr
                 return switch (index) {
                     case 0 -> EssenceExtractorBlockEntity.this.progress;
                     case 1 -> EssenceExtractorBlockEntity.this.maxProgress;
-                    case 2 -> EssenceExtractorBlockEntity.this.fuelTime;
-                    case 3 -> EssenceExtractorBlockEntity.this.maxFuelTime;
                     default -> 0;
                 };
             }
@@ -49,13 +44,11 @@ public class EssenceExtractorBlockEntity extends BlockEntity implements NamedScr
                 switch (index) {
                     case 0 -> EssenceExtractorBlockEntity.this.progress = value;
                     case 1 -> EssenceExtractorBlockEntity.this.maxProgress = value;
-                    case 2 -> EssenceExtractorBlockEntity.this.fuelTime = value;
-                    case 3 -> EssenceExtractorBlockEntity.this.maxFuelTime = value;
                 }
             }
 
             public int size() {
-                return 4;
+                return 3;
             }
         };
     }
@@ -80,54 +73,31 @@ public class EssenceExtractorBlockEntity extends BlockEntity implements NamedScr
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
-        nbt.putInt("mesa.progress", progress);
-        nbt.putInt("mesa.fuelTime", fuelTime);
-        nbt.putInt("mesa.maxFuelTime", maxFuelTime);
+        nbt.putInt("essence_extractor.progress", progress);
     }
 
     @Override
     public void readNbt(NbtCompound nbt) {
         Inventories.readNbt(nbt, inventory);
         super.readNbt(nbt);
-        progress = nbt.getInt("mesa.progress");
-        fuelTime = nbt.getInt("mesa.fuelTime");
-        maxFuelTime = nbt.getInt("mesa.maxFuelTime");
-    }
-
-    private void consumeFuel(EssenceExtractorBlockEntity entity) {
-        if(!getStack(0).isEmpty()) {
-            this.fuelTime = 50;
-            this.maxFuelTime = this.fuelTime;
-            entity.removeStack(0,1);
-        }
+        progress = nbt.getInt("essence_extractor.progress");
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, EssenceExtractorBlockEntity entity) {
-        if(isConsumingFuel(entity)) {
-            entity.fuelTime--;
+        if(world.isClient()) {
+            return;
         }
 
         if(hasRecipe(entity)) {
-            if(hasFuelInFuelSlot(entity) && !isConsumingFuel(entity)) {
-                entity.consumeFuel(entity);
-            }
-            if(isConsumingFuel(entity)) {
-                entity.progress++;
-                if(entity.progress > entity.maxProgress) {
-                    craftItem(entity);
-                }
+            entity.progress++;
+            markDirty(world,pos, state);
+            if(entity.progress > entity.maxProgress) {
+                craftItem(entity);
             }
         } else {
             entity.resetProgress();
+            markDirty(world,pos, state);
         }
-    }
-
-    private static boolean hasFuelInFuelSlot(EssenceExtractorBlockEntity entity) {
-        return !entity.getStack(0).isEmpty();
-    }
-
-    private static boolean isConsumingFuel(EssenceExtractorBlockEntity entity) {
-        return entity.fuelTime > 0;
     }
 
     private static boolean hasRecipe(EssenceExtractorBlockEntity entity) {
@@ -155,11 +125,11 @@ public class EssenceExtractorBlockEntity extends BlockEntity implements NamedScr
                 .getFirstMatch(EssenceExtractorRecipe.Type.INSTANCE, inventory, world);
 
         if(match.isPresent()) {
+            entity.removeStack(0,1);
             entity.removeStack(1,1);
-            entity.removeStack(2,1);
 
-            entity.setStack(3, new ItemStack(match.get().getOutput().getItem(),
-                    entity.getStack(3).getCount() + 1));
+            entity.setStack(2, new ItemStack(match.get().getOutput().getItem(),
+                    entity.getStack(2).getCount() + 1));
 
             entity.resetProgress();
         }
@@ -170,10 +140,10 @@ public class EssenceExtractorBlockEntity extends BlockEntity implements NamedScr
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleInventory inventory, ItemStack output) {
-        return inventory.getStack(3).getItem() == output.getItem() || inventory.getStack(3).isEmpty();
+        return inventory.getStack(2).getItem() == output.getItem() || inventory.getStack(2).isEmpty();
     }
 
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
-        return inventory.getStack(3).getMaxCount() > inventory.getStack(3).getCount();
+        return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount();
     }
 }

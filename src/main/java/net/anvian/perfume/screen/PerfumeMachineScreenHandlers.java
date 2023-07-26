@@ -2,7 +2,7 @@ package net.anvian.perfume.screen;
 
 import net.anvian.perfume.screen.slot.ModFuelSlot;
 import net.anvian.perfume.screen.slot.ModResultSlot;
-import net.anvian.perfume.screen.slot.ModWaterGlass;
+import net.anvian.perfume.screen.slot.ModWaterGlassSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
@@ -29,7 +29,7 @@ public class PerfumeMachineScreenHandlers extends ScreenHandler {
 
         //fuel
         this.addSlot(new ModFuelSlot(inventory, 0, 18, 50));
-        this.addSlot(new ModWaterGlass(inventory, 1, 66, 16));
+        this.addSlot(new ModWaterGlassSlot(inventory, 1, 66, 16));
         this.addSlot(new Slot(inventory, 2, 66, 50));
         this.addSlot(new ModResultSlot(inventory, 3, 114, 33));
 
