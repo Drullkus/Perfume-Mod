@@ -81,18 +81,18 @@ public class PerfumeMachineBlockEntity extends BlockEntity implements NamedScree
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
-        nbt.putInt("mesa.progress", progress);
-        nbt.putInt("mesa.fuelTime", fuelTime);
-        nbt.putInt("mesa.maxFuelTime", maxFuelTime);
+        nbt.putInt("perfume_machine.progress", progress);
+        nbt.putInt("perfume_machine.fuelTime", fuelTime);
+        nbt.putInt("perfume_machine.maxFuelTime", maxFuelTime);
     }
 
     @Override
     public void readNbt(NbtCompound nbt) {
         Inventories.readNbt(nbt, inventory);
         super.readNbt(nbt);
-        progress = nbt.getInt("mesa.progress");
-        fuelTime = nbt.getInt("mesa.fuelTime");
-        maxFuelTime = nbt.getInt("mesa.maxFuelTime");
+        progress = nbt.getInt("perfume_machine.progress");
+        fuelTime = nbt.getInt("perfume_machine.fuelTime");
+        maxFuelTime = nbt.getInt("perfume_machine.maxFuelTime");
     }
 
     private void consumeFuel(PerfumeMachineBlockEntity entity) {
