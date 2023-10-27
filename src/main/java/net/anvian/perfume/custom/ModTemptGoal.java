@@ -44,7 +44,7 @@ public class ModTemptGoal extends Goal {
             --this.cooldown;
             return false;
         }
-        this.closestPlayer = this.mob.world.getClosestPlayer(this.predicate, this.mob);
+        this.closestPlayer = this.mob.getWorld().getClosestPlayer(this.predicate, this.mob);
         return this.closestPlayer != null;
     }
 

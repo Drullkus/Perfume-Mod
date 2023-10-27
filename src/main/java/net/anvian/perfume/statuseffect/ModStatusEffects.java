@@ -2,8 +2,9 @@ package net.anvian.perfume.statuseffect;
 
 import net.anvian.perfume.PerfumeMod;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class ModStatusEffects {
     public static final StatusEffect CARROT_EFFECT = registerStatusEffects("carrot_effect", new CustomEffect(0xffa500));
@@ -13,7 +14,7 @@ public class ModStatusEffects {
     public static final StatusEffect FISH_EFFECT = registerStatusEffects("fish_effect", new CustomEffect(0x60856b));
 
     private static StatusEffect registerStatusEffects(String name, StatusEffect statusEffect){
-        return Registry.register(Registry.STATUS_EFFECT, new Identifier(PerfumeMod.MOD_ID, name), statusEffect);
+        return Registry.register(Registries.STATUS_EFFECT, new Identifier(PerfumeMod.MOD_ID, name), statusEffect);
     }
 
     public static void registerEffects(){

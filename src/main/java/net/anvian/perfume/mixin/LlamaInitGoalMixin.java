@@ -5,6 +5,7 @@ import net.anvian.perfume.statuseffect.ModStatusEffects;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.AbstractDonkeyEntity;
 import net.minecraft.entity.passive.LlamaEntity;
+import net.minecraft.world.EntityView;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,4 +23,8 @@ public class LlamaInitGoalMixin extends AbstractDonkeyEntity {
         this.goalSelector.add(5, new ModTemptGoal(this, 1.25, ModStatusEffects.WHEAT_EFFECT, false));
     }
 
+    @Override
+    public EntityView method_48926() {
+        return null;
+    }
 }

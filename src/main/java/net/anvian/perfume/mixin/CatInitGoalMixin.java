@@ -7,6 +7,7 @@ import net.minecraft.entity.passive.CatEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.world.EntityView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
@@ -32,4 +33,8 @@ public class CatInitGoalMixin extends TameableEntity {
     }
 
 
+    @Override
+    public EntityView method_48926() {
+        return null;
+    }
 }
