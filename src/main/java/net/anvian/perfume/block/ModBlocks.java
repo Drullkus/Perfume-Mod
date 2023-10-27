@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
     public static final Block PERFUME_MACHINE = registerBlock("perfume_machine",
-            new Block(FabricBlockSettings.create().nonOpaque()));
+            new CustomPerfumeMachine(FabricBlockSettings.create().nonOpaque()));
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);
