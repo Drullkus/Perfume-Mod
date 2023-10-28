@@ -3,6 +3,7 @@ package net.anvian.perfume;
 import net.anvian.perfume.block.ModBlocks;
 import net.anvian.perfume.block.entity.ModBlockEntities;
 import net.anvian.perfume.item.ModItems;
+import net.anvian.perfume.recipe.ModRecipes;
 import net.anvian.perfume.screen.ModScreenHandlers;
 import net.anvian.perfume.sound.ModSounds;
 import net.anvian.perfume.statuseffect.ModStatusEffects;
@@ -38,6 +39,8 @@ public class PerfumeMod implements ModInitializer {
 
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerScreenHandlers();
+
+		ModRecipes.registerRecipes();
 
 		ModStatusEffects.registerEffects();
 
