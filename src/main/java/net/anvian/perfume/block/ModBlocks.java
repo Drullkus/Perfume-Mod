@@ -1,6 +1,7 @@
 package net.anvian.perfume.block;
 
 import net.anvian.perfume.PerfumeMod;
+import net.anvian.perfume.block.custom.CustomPerfumeMachine;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
