@@ -22,13 +22,13 @@ public class PerfumeMachineScreenHandler extends ScreenHandler {
 
     public PerfumeMachineScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
         this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
-                new ArrayPropertyDelegate(2));
+                new ArrayPropertyDelegate(4));
     }
 
     public PerfumeMachineScreenHandler(int syncId, PlayerInventory playerInventory,
                                        BlockEntity blockEntity, PropertyDelegate arrayPropertyDelegate) {
         super(ModScreenHandlers.PERFUME_MACHINE_SCREEN_HANDLER, syncId);
-        checkSize(((Inventory) blockEntity), 2);
+        checkSize(((Inventory) blockEntity), 4);
         this.inventory = ((Inventory) blockEntity);
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = arrayPropertyDelegate;
@@ -50,12 +50,24 @@ public class PerfumeMachineScreenHandler extends ScreenHandler {
         return propertyDelegate.get(0) > 0;
     }
 
+    public boolean hasFuel() {
+        return propertyDelegate.get(2) > 0;
+    }
+
     public int getScaledProgress() {
         int progress = this.propertyDelegate.get(0);
         int maxProgress = this.propertyDelegate.get(1);  // Max Progress
         int progressArrowSize = 26; // This is the width in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    }
+
+    public int getScaledFuelProgress() {
+        int fuelProgress = this.propertyDelegate.get(2);
+        int maxFuelProgress = this.propertyDelegate.get(3);
+        int fuelProgressSize = 14;
+
+        return maxFuelProgress != 0 ? (int)(((float)fuelProgress / (float)maxFuelProgress) * fuelProgressSize) : 0;
     }
 
     @Override

@@ -33,11 +33,19 @@ public class PerfumeMachineScreen extends HandledScreen<PerfumeMachineScreenHand
 
         context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
         renderProgressBar(context, x, y);
+        renderFuelBar(context, x, y);
     }
 
     private void renderProgressBar(DrawContext context, int x, int y) {
         if(handler.isCrafting()) {
             context.drawTexture(TEXTURE, x + 84, y + 22, 176, 14, handler.getScaledProgress(), 36);
+        }
+    }
+
+    private void renderFuelBar(DrawContext context, int x, int y) {
+        if(handler.hasFuel()) {
+            context.drawTexture(TEXTURE, x + 18, y + 33 + 14 - handler.getScaledFuelProgress(), 176,
+                    14 - handler.getScaledFuelProgress(), 14, handler.getScaledFuelProgress());
         }
     }
 
