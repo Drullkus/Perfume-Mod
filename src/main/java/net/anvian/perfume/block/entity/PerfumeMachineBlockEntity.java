@@ -17,6 +17,7 @@ import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -128,6 +129,7 @@ public class PerfumeMachineBlockEntity extends BlockEntity implements ExtendedSc
                     markDirty(world, pos, state);
 
                     if(hasCraftingFinished()) {
+                        world.playSound(null, pos, ModSounds.PIP_SOUND, SoundCategory.BLOCKS, 1.0f, 1.0f);
                         this.craftItem();
                         this.resetProgress();
                     }

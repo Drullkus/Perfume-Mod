@@ -18,5 +18,6 @@
   "item.perfume.iron_perfume" : "Iron perfume",
   "effect.perfume.iron_effect": "Iron perfume",
 
-  "subtitles.perfume.perfume_sound": "Sound of perfume"
+  "subtitles.perfume.perfume_sound": "Sound of perfume",
+  "subtitles.perfume.pip_sound": "Sound of the perfume machine"
 }

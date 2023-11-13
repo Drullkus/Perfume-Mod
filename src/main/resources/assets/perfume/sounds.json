@@ -4,5 +4,11 @@
     "sounds" : [
       "perfume:perfume_sound"
     ]
+  },
+  "pip_sound": {
+    "subtitle": "subtitles.perfume.pip_sound",
+    "sounds" : [
+      "perfume:pip_sound"
+    ]
   }
 }
