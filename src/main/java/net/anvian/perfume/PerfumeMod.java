@@ -33,18 +33,18 @@ public class PerfumeMod implements ModInitializer {
 				.displayName(Text.translatable("itemGroup.perfume.perfume_group"))
 				.build());
 
+		ModSounds.registerModSound();
+
+		ModStatusEffects.registerEffects();
+
+		ModRecipes.registerRecipes();
+
 		ModItems.registerModItems();
 
 		ModBlocks.registerModBlock();
 
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerScreenHandlers();
-
-		ModRecipes.registerRecipes();
-
-		ModStatusEffects.registerEffects();
-
-		ModSounds.registerModSound();
 
 		LOGGER.info("Hello from Perfume Mod!");
 	}
