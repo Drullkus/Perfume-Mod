@@ -1,4 +1,4 @@
-package net.anvian.perfume.custom;
+package net.anvian.perfume.util;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.TargetPredicate;

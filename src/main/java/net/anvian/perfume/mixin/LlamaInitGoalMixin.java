@@ -1,6 +1,6 @@
 package net.anvian.perfume.mixin;
 
-import net.anvian.perfume.custom.ModTemptGoal;
+import net.anvian.perfume.util.ModTemptGoal;
 import net.anvian.perfume.statuseffect.ModStatusEffects;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.AbstractDonkeyEntity;
