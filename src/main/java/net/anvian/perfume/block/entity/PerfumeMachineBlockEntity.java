@@ -2,6 +2,7 @@ package net.anvian.perfume.block.entity;
 
 import net.anvian.perfume.recipe.PerfumeMachineRecipe;
 import net.anvian.perfume.screen.PerfumeMachineScreenHandler;
+import net.anvian.perfume.sound.ModSounds;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -143,7 +144,7 @@ public class PerfumeMachineBlockEntity extends BlockEntity implements ExtendedSc
         }
     }
     private boolean hasFuelInFuelSlot() {
-        return !this.getStack(0).isEmpty();
+        return !this.getStack(FUEL_SLOT).isEmpty();
     }
 
     private boolean isConsumingFuel() {
