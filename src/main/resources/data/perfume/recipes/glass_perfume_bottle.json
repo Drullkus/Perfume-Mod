@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#@#",
+    "#@#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:glass_pane"
+    },
+    "@": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "perfume:glass_perfume_bottle",
+    "count": 1
+  }
+}

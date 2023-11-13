@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_block"
+    },
+    "@": {
+      "item": "minecraft:cobbled_deepslate"
+    }
+  },
+  "pattern": [
+    "###",
+    "# #",
+    "@@@"
+  ],
+  "result": {
+    "item": "perfume:perfume_machine"
+  }
+}
