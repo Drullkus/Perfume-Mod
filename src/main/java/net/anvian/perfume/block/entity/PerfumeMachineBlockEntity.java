@@ -78,7 +78,7 @@ public class PerfumeMachineBlockEntity extends BlockEntity implements ExtendedSc
 
     @Override
     public Text getDisplayName() {
-        return Text.translatable("blockEntity.perfume_machine");
+        return Text.translatable("block.perfume.perfume_machine");
     }
 
     @Override

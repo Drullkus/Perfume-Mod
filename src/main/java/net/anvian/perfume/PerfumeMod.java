@@ -30,7 +30,7 @@ public class PerfumeMod implements ModInitializer {
 
 		Registry.register(Registries.ITEM_GROUP, PERFUME_GROUP, FabricItemGroup.builder()
 				.icon(()-> new ItemStack(ModItems.WATER_PERFUME_BOTTLE))
-				.displayName(Text.literal("Perfume Mod Group"))
+				.displayName(Text.translatable("itemGroup.perfume.perfume_group"))
 				.build());
 
 		ModItems.registerModItems();
