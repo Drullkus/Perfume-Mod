@@ -15,7 +15,6 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class PerfumeMachineRecipe implements Recipe<SimpleInventory> {
-
     private final ItemStack output;
     private final List<Ingredient> recipeItems;
 
