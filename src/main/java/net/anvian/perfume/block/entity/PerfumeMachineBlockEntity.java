@@ -37,7 +37,7 @@ public class PerfumeMachineBlockEntity extends BlockEntity implements ExtendedSc
 
     private final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 72;
+    private int maxProgress = 3000;
     private int fuelTime = 0;
     private int maxFuelTime = 0;
 
@@ -153,7 +153,8 @@ public class PerfumeMachineBlockEntity extends BlockEntity implements ExtendedSc
 
     private void consumeFuel() {
         if(!getStack(FUEL_SLOT).isEmpty()) {
-            this.fuelTime = 50;
+            //time in ticks that the fuel will burn
+            this.fuelTime = 300;
             this.maxFuelTime = this.fuelTime;
             this.removeStack(FUEL_SLOT,1);
         }
