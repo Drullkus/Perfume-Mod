@@ -24,10 +24,4 @@ public abstract class PigInitGoalMixin extends AnimalEntity {
     private void init(CallbackInfo ci){
         this.goalSelector.add(3,new ModTemptGoal(this, 1.1, ModStatusEffects.CARROT_EFFECT, false));
     }
-
-    @Nullable
-    @Override
-    public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return null;
-    }
 }

@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(BeeEntity.class)
-public class BeeInitGoalMixin extends AnimalEntity {
+public abstract class BeeInitGoalMixin extends AnimalEntity {
     protected BeeInitGoalMixin(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -23,11 +23,5 @@ public class BeeInitGoalMixin extends AnimalEntity {
     @Inject(method = "initGoals()V", at=@At("HEAD"))
     private void init(CallbackInfo ci){
         this.goalSelector.add(3,new ModTemptGoal(this, 1.25, ModStatusEffects.FLOWER_EFFECT, false));
-    }
-
-    @Nullable
-    @Override
-    public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return null;
     }
 }

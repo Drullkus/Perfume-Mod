@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LlamaEntity.class)
-public class LlamaInitGoalMixin extends AbstractDonkeyEntity {
+public abstract class LlamaInitGoalMixin extends AbstractDonkeyEntity {
     protected LlamaInitGoalMixin(EntityType<? extends AbstractDonkeyEntity> entityType, World world) {
         super(entityType, world);
     }
@@ -21,10 +21,5 @@ public class LlamaInitGoalMixin extends AbstractDonkeyEntity {
     @Inject(method = "initGoals()V", at = @At("HEAD"))
     private void init(CallbackInfo ci){
         this.goalSelector.add(5, new ModTemptGoal(this, 1.25, ModStatusEffects.WHEAT_EFFECT, false));
-    }
-
-    @Override
-    public EntityView method_48926() {
-        return null;
     }
 }
